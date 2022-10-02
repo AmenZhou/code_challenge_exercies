@@ -64,7 +64,7 @@ const printSolutions = ({ solutions, n }) => {
   return solutions.map(queens => {
     return queens.map(q => {
       let str = '';
-      for(i = 1; i <= n; i++) {
+      for (i = 1; i <= n; i++) {
         if (q.column === i) {
           str += 'Q';
         } else {
@@ -95,38 +95,37 @@ var solveNQueens = function (n) {
     column = 1;
   };
 
-  while (row <= n && row >= 1) {
+  while (column <= n && row <= n && row >= 1) {
     if (column > n) {
       throw "column is wrong";
     }
 
-    while (column <= n) {
-      if (!isAttacked({ current: { row, column }, queens })) {
-        queens[row - 1] = { row, column };
-        console.log('queens ' + JSON.stringify(queens));
+    if (!isAttacked({ current: { row, column }, queens })) {
+      queens[row - 1] = { row, column };
+      console.log('queens ' + JSON.stringify(queens));
 
-        // when a queen is on the last row, all n queens have been found
-        if (row === n) {
-          solutions.push([...queens]);
-          moveUpTree();
-          break;
-        }
-
-        moveToNextRow();
-        break;
-      }
-
-      // Each row must have a queen.
-      // Move back to a row above when there is no cell for a queen on a row
-      if (column === n) {
+      // when a queen is on the last row, all n queens have been found
+      if (row === n) {
+        solutions.push([...queens]);
         moveUpTree();
-        break;
+        continue;
       }
 
-      column++;
+      moveToNextRow();
+      continue;
     }
+
+    // Each row must have a queen.
+    // Move back to a row above when there is no cell for a queen on a row
+    if (column === n) {
+      moveUpTree();
+      continue;
+    }
+
+    column++;
   }
 
   // console.log(solutions);
   return printSolutions({ solutions, n });
 };
+
