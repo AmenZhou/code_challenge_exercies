@@ -23,4 +23,15 @@ public int numTrees(int n) {
 ## Dive into the solution
 ![Diagram](https://github.com/AmenZhou/code_challenge_exercies/blob/main/pic/unique_binary_tree.png)
 
+### How the above solution works?
+
+The total number
+```
+G[0] = 1
+G[1] = 1
+G[2] = 2
+G[3] = 5
+G[4] = 16
+...
+```
 
