@@ -21,6 +21,6 @@ public int numTrees(int n) {
 ```
 
 ## Dive into the solution
-![alt text]([http://url/to/img.png](https://github.com/AmenZhou/code_challenge_exercies/blob/main/pic/unique_binary_tree.png))
+![Diagram](https://github.com/AmenZhou/code_challenge_exercies/blob/main/pic/unique_binary_tree.png)
 
 
