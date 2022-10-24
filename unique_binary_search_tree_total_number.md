@@ -25,13 +25,14 @@ public int numTrees(int n) {
 
 ### How the above solution works?
 
-The total number
+The total number of each G(x) is aways static
 ```
-G[0] = 1
-G[1] = 1
-G[2] = 2
-G[3] = 5
-G[4] = 16
-...
+G(0) = 1
+G(1) = 1
+G(2) = G(0)*G(1) + G(1)*G(0) = 1 + 1 = 2
+G(3) = G(0)*G(2) + G(1)*G(1) + G(2)*G(0) = 2 + 1 + 2 = 5
+
+G(4) = G(0)*G(3) + G(1)*G(2) + G(2)*G(1) + G(3)*G(0)
+G(4) = 1*5 + 1*2 + 2*1 + 5*1 = 14
 ```
 
