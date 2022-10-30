@@ -1,6 +1,7 @@
-// LeetCode https://leetcode.com/problems/binary-tree-level-order-traversal/submissions/
+### Problem
+[LeetCode](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
-
+```js
 const traversal = (node, level, result) => {
   if (!node)
     return;
@@ -18,3 +19,4 @@ const traversal = (node, level, result) => {
     traversal(root, 0, result);
     return result;
 };
+```
