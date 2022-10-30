@@ -21,3 +21,4 @@ const traversal = (node, level, result) => {
     return result;
 };
 ```
+![Diagram](https://github.com/AmenZhou/code_challenge_exercies/blob/main/pic/binary_tree_level_order_traversal.png)
