@@ -1,6 +1,7 @@
-### Problem
+## Problem
 [LeetCode](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 
+## Solution
 ```js
 const traversal = (node, level, result) => {
   if (!node)
