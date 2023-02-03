@@ -19,7 +19,8 @@ def max_subarray_sum_circular(nums)
     max_sum = [max_sum, sum].max
     cache['0'] = item if idx == 0
 
-    # Surfix
+    # Suffix
+    # Cache the max sum for each subarrary e.g. nums[0], nums[0..1], nums[0..2], ... nums[0..n]
     nums[idx+1..-1].each_with_index do |i_item, i_idx|
       sum = sum + i_item
       max_sum = [sum, max_sum].max
@@ -36,6 +37,7 @@ def max_subarray_sum_circular(nums)
       raise "cache could not be found!"
     end
     # Prefix
+    # Use cached max sum for prefix subarrary
     max_sum = [sum + cache["#{idx-1}"], max_sum].max
   end
   max_sum
