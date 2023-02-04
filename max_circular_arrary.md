@@ -5,7 +5,7 @@ See [here](https://leetcode.com/problems/maximum-sum-circular-subarray)
 
 ## Solution
 
-![max_sum_subarray](https://user-images.githubusercontent.com/6025823/216636530-877c966a-49f4-409a-9b9a-240dd5feb7a7.png)
+![max_sum_subarray_kadane_algorithm](https://user-images.githubusercontent.com/6025823/216786829-09b60175-dbf9-4d9c-8cd6-692fbab30e12.png)
 
 
 This solution did not pass LeeCode submission, it is not performant for some extreme long arrays.
@@ -43,3 +43,7 @@ def max_subarray_sum_circular(nums)
   max_sum
 end
 ```
+
+## Kadane's Algorithm
+
+
