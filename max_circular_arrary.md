@@ -104,3 +104,59 @@ def max_sub_array(nums)
 end
 ```
 
+## Ask ChatGPT to optimze the above code for more performant
+
+Here it is
+
+```ruby
+def max_subarray_sum_circular(nums)
+  n = nums.length
+  max_sum = max_sub_array(nums)
+
+  # Compute the maximum sum for circular subarrays
+  total_sum = nums.sum
+  max_left = [0] * n
+  max_right = [0] * n
+  curr_sum = 0
+  for i in 0...n
+    curr_sum += nums[i]
+    max_left[i] = [max_left[i-1], curr_sum].max
+  end
+  curr_sum = 0
+  for i in (n-1).downto(0)
+    curr_sum += nums[i]
+    max_right[i] = [max_right[i+1], curr_sum].max
+  end
+  for i in 0...n
+    circular_sum = total_sum - nums[i] + [0, max_left[i-1]].max + [0, max_right[(i+1) % n]].max
+    max_sum = [max_sum, circular_sum].max
+  end
+
+  max_sum
+end
+
+def max_sub_array(nums)
+  max_sum = -Float::INFINITY
+  curr_sum = 0
+  start_idx = 0
+  end_idx = -1
+  curr_start_idx = 0
+
+  for i in 0...nums.length
+    if curr_sum <= 0
+      curr_start_idx = i
+      curr_sum = nums[i]
+    else
+      curr_sum += nums[i]
+    end
+
+    if curr_sum > max_sum
+      max_sum = curr_sum
+      start_idx = curr_start_idx
+      end_idx = i
+    end
+  end
+
+  return max_sum
+end
+```
