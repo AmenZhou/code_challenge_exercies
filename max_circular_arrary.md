@@ -104,7 +104,7 @@ def max_sub_array(nums)
 end
 ```
 
-## Ask ChatGPT to optimze the above code for more performant
+## Ask ChatGPT to optimze the above code for more performant (It does not pass test suites)
 
 Here it is
 
