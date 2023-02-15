@@ -46,4 +46,23 @@ end
 
 ## Kadane's Algorithm
 
+```ruby
+# Max Subarray Sum
+def max_sub_array(nums)
+  left = nil
+  max_sum = -Float::INFINITY
 
+  nums.each_with_index.each do |right, idx|
+    if left.nil?
+      left = right
+      next
+    end
+
+    max_sum = [left, max_sum].max
+    left = [left + right, right].max
+  end
+
+  max_sum = [left, max_sum].max
+  max_sum
+end
+```
