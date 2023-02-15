@@ -46,8 +46,8 @@ end
 
 ## Kadane's Algorithm
 
+### Max Subarray Sum
 ```ruby
-# Max Subarray Sum
 def max_sub_array(nums)
   left = nil
   max_sum = -Float::INFINITY
@@ -66,3 +66,41 @@ def max_sub_array(nums)
   max_sum
 end
 ```
+
+### Max Circular Sum
+Not performant, need to add cache
+```ruby
+def max_subarray_sum_circular(nums)
+  max_sum = -Float::INFINITY
+
+  (0..nums.length-1).each do |i|
+    if i == 0
+      max_sum = max_sub_array(nums)
+      next
+    end
+    max_sum = [max_sum, max_sub_array(nums[i..-1] + nums[0..i-1])].max
+  end
+
+  max_sum
+end
+
+
+def max_sub_array(nums)
+  left = nil
+  max_sum = -Float::INFINITY
+
+  nums.each_with_index.each do |right, idx|
+    if left.nil?
+      left = right
+      next
+    end
+
+    max_sum = [left, max_sum].max
+    left = [left + right, right].max
+  end
+
+  max_sum = [left, max_sum].max
+  max_sum
+end
+```
+
