@@ -29,6 +29,8 @@ The longest sequence contains 4 names.
 
 ## 4. Implementation (Ruby)
 
+See pic: [pic/acyclic_graph_depth](https://github.com/AmenZhou/code_challenge_exercies/blob/main/pic/acyclic_graph_depth) 
+
 ### Recursion
 ```ruby
 def longest_chain(names)
