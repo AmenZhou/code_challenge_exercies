@@ -72,9 +72,9 @@ end
 # Input {"james"=>[["james", "root"], ["james", "peter"]], "root"=>[["root", "zhou"]], "zhou"=>[["zhou", "john"]]}
 
 # iteration 1 - 'james root', there are 2 names with first name 'root' - { james: 1, root: 2, zhou: 2 }
-# iteration 2 - 'james peter', there are 0 name for 'peter' - { james: 1, root: 2, zhou: 2 }
-# iteration 3 - 'root zhou', { james: 1, root: 2, zhou: 3 }
-# iteration 4 - 'zhou john', { james: 1, root: 2, zhou: 3 }
+# iteration 2 - 'james peter', there is 0 name for 'peter' - { james: 1, root: 2, zhou: 2 }
+# iteration 3 - 'root zhou', there is a name with first name 'zhou', { james: 1, root: 2, zhou: 3 }
+# iteration 4 - 'zhou john', there is 0 name for first name 'john', { james: 1, root: 2, zhou: 3 }
 
 # the max is 3
 ```
